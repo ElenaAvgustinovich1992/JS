@@ -1,0 +1,39 @@
+<html>
+    <title>Task 4</title>
+    <script>
+        const checkAge = function(input) {
+            if (!/^\d+$/.test(input)) {
+                throw new Error (`Error: the argument isn't a valid number`);
+            }
+            const parsed_age = parseInt(input);
+            console.info(`parsed_age = ${parsed_age}`);
+
+            const age_1 = 10;
+            const age_2 = 18;
+            const age_3 = 60;
+
+            if (parsed_age >= age_1) {
+                console.groupCollapsed("True");
+    
+                if (parsed_age < age_2) {
+                    console.log(`You don't have access cause your age is less than ${age_2}`);
+                }
+                if (parsed_age >= age_2 && parsed_age < age_3) {
+                    console.log("Welcome!");
+                }
+                if (parsed_age > age_3) {
+                    console.log("Keep calm and watch Culture channel");
+                }
+                else {
+                    console.log("Technical work");
+                };
+            }
+        }
+
+        const user_input = prompt("Greetings!\nHow old are you?", "18");
+        console.info(`user_input = ${user_input}`);
+
+        checkAge(user_input);
+
+    </script>
+</html>
